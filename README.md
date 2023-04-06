@@ -1,8 +1,8 @@
 ## Quick Start
 * `mkdir -p ~/Development && cd ~/Development`
-* `git clone https://github.com/glillico/macup.git ~/Development/macup/macup`
+* `git clone https://github.com/glillico/macup.git ~/Development/macup`
 * `cd ~/Development/macup`
-* `setup.sh`
+* `./setup.sh`
 
 ## Instructions
 ### Setup python virtual environment
