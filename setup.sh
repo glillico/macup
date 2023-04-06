@@ -65,6 +65,8 @@ ln -s ~/.ssh/templates/1Password
 
 echo '## Setup homelab'
 cd ~/Development
+echo '### Clone homelab repository'
+git clone https://github.com/glillico/homelab.git ~/Development/GitHub/homelab
 echo '### Link to homelab repository'
 ln -s ~/Development/GitHub/homelab
 
