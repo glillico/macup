@@ -63,6 +63,11 @@ echo '### Configure active templates'
 cd ~/.ssh/active
 ln -s ~/.ssh/templates/1Password
 
+echo '## Setup homelab'
+cd ~/Development
+echo '### Link to homelab repository'
+ln -s ~/Development/GitHub/homelab
+
 echo '## Done'
 
 echo
