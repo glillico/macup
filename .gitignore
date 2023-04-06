@@ -1,0 +1,8 @@
+*.DS_Store
+.DS_Store?
+*.LSOverride
+Thumbs.db
+.bundle
+*.retry
+mac-dev-playbook/
+mac-dev-playbook_myconfigs/
