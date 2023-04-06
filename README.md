@@ -57,8 +57,18 @@
 ### Clone ssh keys
 * TBC
 
-### Clone git repositories
-* TBC
+## Setup gickup
+### Setup gickup environment
+
+* `mkdir -p ~/Development/gickup`
+* `cd ~/Development/gickup`
+
+### Download gickup binary
+* `wget https://github.com/cooperspencer/gickup/releases/download/v0.10.14/gickup_0.10.14_darwin_amd64.tar.gz`
+* `tar zxvf gickup_0.10.14_darwin_amd64.tar.gz`
+
+### Configure gickup
+* `ln -s ~/Development/macup/gickup_conf.yml ./conf.yml`
 
 ## Author Information
 

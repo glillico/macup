@@ -41,6 +41,16 @@ cd ~/Development/macup/mac-dev-playbook && echo "collections_path = ./" >> ansib
 echo '### Install ansible requirements'
 ansible-galaxy install -r requirements.yml
 
+echo '## Setup gickup'
+echo '## Setup gickup environment'
+mkdir -p ~/Development/gickup
+cd ~/Development/gickup
+echo '## Download gickup binary'
+wget https://github.com/cooperspencer/gickup/releases/download/v0.10.14/gickup_0.10.14_darwin_amd64.tar.gz
+tar zxvf gickup_0.10.14_darwin_amd64.tar.gz
+echo 'Configure gickup'
+ln -s ~/Development/macup/gickup_conf.yml ./conf.yml
+
 echo '## Done'
 
 echo

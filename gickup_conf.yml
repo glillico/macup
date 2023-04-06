@@ -1,0 +1,10 @@
+source:
+  github:
+    - token: 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
+      user: glillico
+      url: www.github.com
+      username: glillico
+
+destination:
+  local:
+    - path: /Users/glillico/Development/GitHub
