@@ -1,12 +1,13 @@
 ## Quick Start
-* `mkdir -p ~/Development && cd ~/Development`
-* `git clone https://github.com/glillico/macup.git ~/Development/macup`
+* `mkdir -p ~/Development/GitHub && cd ~/Development`
+* `git clone https://github.com/glillico/macup.git ~/Development/GitHub/macup`
+* `ln -s ~/Development/GitHub/macup`
 * `cd ~/Development/macup`
 * `./setup.sh`
 
 ## Instructions
 ### Setup python virtual environment
-* `mkdir -p ~/Development/Python_VENVs ~/Development/GitHub`
+* `mkdir -p ~/Development/Python_VENVs`
 * `cd ~/Development/Python_VENVs`
 * `/usr/bin/python3 -m venv macup`
 * `ln -s macup ansible`
