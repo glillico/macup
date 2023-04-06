@@ -54,9 +54,6 @@
 ### Run the below when ready
 * `ANSIBLE_CONFIG=~/Development/macup/mac-dev-playbook/ansible.cfg ansible-playbook -i ~/Development/macup/mac-dev-playbook/inventory ~/Development/macup/mac-dev-playbook/main.yml -K`
 
-### Clone ssh keys
-* TBC
-
 ## Setup gickup
 ### Setup gickup environment
 
@@ -69,6 +66,20 @@
 
 ### Configure gickup
 * `ln -s ~/Development/macup/gickup_conf.yml ./conf.yml`
+
+## Setup ssh keys
+### Clone ssh repository
+git clone https://github.com/glillico/ssh.git ~/ssh
+
+### Configure ssh keys
+cd ~/
+mv .ssh .OLD.ssh
+mv ssh .ssh
+chmod 644 ~/.ssh/authorized_keys
+
+### Configure active templates
+cd ~/.ssh/active
+ln -s ~/.ssh/templates/1Password
 
 ## Author Information
 

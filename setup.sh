@@ -51,6 +51,18 @@ tar zxvf gickup_0.10.14_darwin_amd64.tar.gz
 echo 'Configure gickup'
 ln -s ~/Development/macup/gickup_conf.yml ./conf.yml
 
+echo '## Setup ssh keys'
+echo '### Clone ssh repository'
+git clone https://github.com/glillico/ssh.git ~/ssh
+echo '### Configure ssh keys'
+cd ~/
+mv .ssh .OLD.ssh
+mv ssh .ssh
+chmod 644 ~/.ssh/authorized_keys
+echo '### Configure active templates'
+cd ~/.ssh/active
+ln -s ~/.ssh/templates/1Password
+
 echo '## Done'
 
 echo
