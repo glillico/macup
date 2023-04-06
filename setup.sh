@@ -49,6 +49,7 @@ echo '## Download gickup binary'
 wget https://github.com/cooperspencer/gickup/releases/download/v0.10.14/gickup_0.10.14_darwin_amd64.tar.gz
 tar zxvf gickup_0.10.14_darwin_amd64.tar.gz
 echo 'Configure gickup'
+cp ~/Development/GitHub/macup/example_gickup_conf.yml ~/Development/GitHub/macup/gickup_conf.yml
 ln -s ~/Development/macup/gickup_conf.yml ./conf.yml
 
 echo '## Setup ssh keys'
@@ -74,3 +75,7 @@ echo
 echo Run the below when ready.
 echo 'source ~/Development/Python_VENVs/macup/bin/activate'
 echo 'ANSIBLE_CONFIG=~/Development/macup/mac-dev-playbook/ansible.cfg ansible-playbook -i ~/Development/macup/mac-dev-playbook/inventory ~/Development/macup/mac-dev-playbook/main.yml -K'
+echo
+echo Edit ~/Development/gickup/conf.yml and add in your github token.
+echo Then run the below to sync all github repositories.
+echo '~/Development/gickup/gickup ~/Development/gickup/conf.yml'
