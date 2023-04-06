@@ -67,6 +67,9 @@
 ### Configure gickup
 * `ln -s ~/Development/macup/gickup_conf.yml ./conf.yml`
 
+### Run gickup
+./gickup
+
 ## Setup ssh keys
 ### Clone ssh repository
 git clone https://github.com/glillico/ssh.git ~/ssh
