@@ -1,6 +1,6 @@
 source:
   github:
-    - token: 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
+    - token: <GITHUB TOKEN>
       user: glillico
       url: www.github.com
       username: glillico
