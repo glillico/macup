@@ -38,6 +38,9 @@ ln -s ~/Development/macup/mac-dev-playbook_myconfigs/files/sublime/Preferences.s
 echo '### Modify ansible.cfg'
 cd ~/Development/macup/mac-dev-playbook && echo "collections_path = ./" >> ansible.cfg
 
+echo '### Modify .gitignore'
+cd ~/Development/macup/mac-dev-playbook && echo "ansible_collections" >> .gitignore
+
 echo '### Install ansible requirements'
 ansible-galaxy install -r requirements.yml
 
