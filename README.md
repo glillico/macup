@@ -1,4 +1,5 @@
 ## Quick Start
+* 'xcode-select --install'
 * `mkdir -p ~/Development/GitHub && cd ~/Development`
 * `git clone https://github.com/glillico/macup.git ~/Development/GitHub/macup`
 * `ln -s ~/Development/GitHub/macup`
@@ -6,6 +7,9 @@
 * `./setup.sh`
 
 ## Instructions
+### Install xcode command line tools
+* 'xcode-select --install'
+
 ### Setup python virtual environment
 * `mkdir -p ~/Development/Python_VENVs`
 * `cd ~/Development/Python_VENVs`
