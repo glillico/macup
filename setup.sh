@@ -1,6 +1,14 @@
 #!/bin/sh
 
+ANSIBLE_CONFIG=~/Development/macup/mac-dev-playbook/ansible.cfg
+GICKUPVERSION=0.10.14
+GICKUPOS=darwin
+GICKUPPLATFORM=arm64
+
 echo '# Starting'
+
+echo '## Install xcode command line tools'
+xcode-select --install
 
 echo '## Setup python virtual environment'
 mkdir -p ~/Development/Python_VENVs ~/Development/GitHub
@@ -50,19 +58,21 @@ echo '## Install Rosetta 2'
 sudo softwareupdate --install-rosetta
 
 echo '## Run ansible playbook'
-ANSIBLE_CONFIG=~/Development/macup/mac-dev-playbook/ansible.cfg ansible-playbook -i ~/Development/macup/mac-dev-playbook/inventory ~/Development/macup/mac-dev-playbook/main.yml -K
+ansible-playbook -i ~/Development/macup/mac-dev-playbook/inventory ~/Development/macup/mac-dev-playbook/main.yml -K
 
 echo '## Setup gickup'
 echo '### Setup gickup environment'
 mkdir -p ~/Development/gickup
 cd ~/Development/gickup
 echo '### Download gickup binary'
-wget https://github.com/cooperspencer/gickup/releases/download/v0.10.14/gickup_0.10.14_darwin_arm64.tar.gz
-tar zxvf gickup_0.10.14_darwin_arm64.tar.gz
+curl -LO https://github.com/cooperspencer/gickup/releases/download/v0.10.14/gickup_${GICKUPVERSION}_${GICKUPOS}_${GICKUPPLATFORM}.tar.gz
+tar zxvf gickup_${GICKUPVERSION}_${GICKUPOS}_${GICKUPPLATFORM}.tar.gz
 echo '### Configure gickup'
-curl https://gist.githubusercontent.com/glillico/f6b4866741ce7640ab56b3d78dd05e2d/raw/cfe1c43d95bbbe8720692d71146f1631b4e8a69d/conf.yml -o conf.yml
-echo '## Run gickup'
-~/Development/gickup/gickup ~/Development/gickup/conf.yml
+curl -LO https://gist.githubusercontent.com/glillico/f6b4866741ce7640ab56b3d78dd05e2d/raw/cfe1c43d95bbbe8720692d71146f1631b4e8a69d/conf.yml
+echo '### Run gickup'
+echo "Edit ~/Development/gickup/conf.yml then run the below command to sync github repositories."
+echo "~/Development/gickup/gickup ~/Development/gickup/conf.yml"
+# r~/Development/gickup/gickup ~/Development/gickup/conf.yml
 
 echo '## Setup ssh keys'
 echo '### Clone ssh repository'
@@ -71,10 +81,14 @@ echo '### Configure ssh keys'
 cd ~/
 mv .ssh .OLD.ssh
 mv ssh .ssh
-chmod 644 ~/.ssh/authorized_keys
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
 echo '### Configure active templates'
 cd ~/.ssh/active
 ln -s ~/.ssh/templates/1Password
+echo '### Remove .OLD.ssh directory.'
+echo 'Remove ~/.OLD.ssh if no longer reqired.'
+# rm -rf ~/.OLD.ssh
 
 echo '## Setup homelab'
 cd ~/Development
