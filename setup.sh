@@ -72,7 +72,7 @@ curl -LO https://gist.githubusercontent.com/glillico/f6b4866741ce7640ab56b3d78dd
 echo '### Run gickup'
 echo "Edit ~/Development/gickup/conf.yml then run the below command to sync github repositories."
 echo "~/Development/gickup/gickup ~/Development/gickup/conf.yml"
-# r~/Development/gickup/gickup ~/Development/gickup/conf.yml
+# ~/Development/gickup/gickup ~/Development/gickup/conf.yml
 
 echo '## Setup ssh keys'
 echo '### Clone ssh repository'
@@ -96,6 +96,13 @@ echo '### Clone homelab repository'
 git clone https://github.com/glillico/homelab.git ~/Development/GitHub/homelab
 echo '### Link to homelab repository'
 ln -s ~/Development/GitHub/homelab
+
+echo '## Setup .gitconfig_extras file.'
+echo '### Clone homelab repository'
+cp -p ~/Development/GitHub/dotfiles/.example.gitconfig_extras ~/Development/GitHub/dotfiles/.gitconfig_extras
+echo '### Link .gitconfig_extras file.'
+cd ~/
+ln -s ~/Development/GitHub/dotfiles/.gitconfig_extras
 
 echo '## Complete setup of backblaze'
 open '/opt/homebrew/Caskroom/backblaze/8.5.0.664/Backblaze Installer.app'

@@ -98,6 +98,12 @@ See https://github.com/cooperspencer/gickup/releases/ for more information.
 ### Link to homelab repository
 * `ln -s ~/Development/GitHub/homelab`
 
+## Setup .gitconfig_extras file.
+`cp -p ~/Development/GitHub/dotfiles/.example.gitconfig_extras ~/Development/GitHub/dotfiles/.gitconfig_extras`
+### Link to .gitconfig_extras file.
+`cd ~/`
+`ln -s ~/Development/GitHub/dotfiles/.gitconfig_extras`
+
 ## Complete setup of backblaze
 * `open '/opt/homebrew/Caskroom/backblaze/8.5.0.664/Backblaze Installer.app'`
 
