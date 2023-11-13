@@ -1,3 +1,5 @@
+DEPRECATED - A new version of the runsheet can be found [here](https://gist.github.com/glillico/a64c73478eb4fd194204412691f06a79).
+
 # Quick Start
 * `xcode-select --install`
 * `mkdir -p ~/Development/GitHub && cd ~/Development`
